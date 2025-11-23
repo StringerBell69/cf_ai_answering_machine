@@ -1,0 +1,35 @@
+name = "edgevoice-api"
+main = "src/index.ts"
+compatibility_date = "2024-11-01"
+node_compat = true
+
+[ai]
+binding = "AI"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "edgevoice-db"
+database_id = "TODO_REPLACE_AFTER_CREATION"
+
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "edgevoice-embeddings"
+dimensions = 768
+metric = "cosine"
+
+[[r2_buckets]]
+binding = "AUDIO_BUCKET"
+bucket_name = "edgevoice-audio"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "TODO_REPLACE_AFTER_CREATION"
+
+[vars]
+ENVIRONMENT = "development"
+
+# Secrets à configurer:
+# wrangler secret put STRIPE_SECRET_KEY
+# wrangler secret put STRIPE_WEBHOOK_SECRET
+# wrangler secret put TWILIO_ACCOUNT_SID
+# wrangler secret put TWILIO_AUTH_TOKEN
